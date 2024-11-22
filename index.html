@@ -16,6 +16,25 @@
         <span>Tamanho <span id="valor"> </span> caracteres </span>
         <input id="slider" class="slider" type="range" name="gerador" min="5" max="15" value="10">
 
+        <div class="item">
+            <input type="checkbox" name="include_uppercase" id="include_uppercase">
+            <label for="include_uppercase">Incluir letras maiúsculas</label>
+        </div>
+
+        <div class="item">
+            <input type="checkbox" name="include_lowercase" id="include_lowercase">
+            <label for="include_lowercase">
+                Incluir números
+            </label>
+        </div>
+
+        <div class="item">
+            <input type="checkbox" name="include_lowercase" id="include_lowercase">
+            <label for="include_lowercase">
+                Incluir caractere especial
+            </label>
+        </div>
+
         <button id="button" class="button-cta" onclick="generatePassword()"> Gerar senha</button>
     </main>
 
