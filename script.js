@@ -1,3 +1,18 @@
+function getChartTypes() {
+    const uppercase = document.querySelector('#include_uppercase').checked;
+    const lowercase = document.querySelector('#include_lowercase').checked;
+    const number = document.querySelector('#include_number').checked;
+    const specialCharacter = document.querySelector('#include_special_character').checked;
+    console.log('Uppercase:', uppercase);
+}
+
+
+document.querySelector('#include_uppercase').addEventListener('click', function () {
+    getChartTypes();
+    
+})
+
+
 let sliderElement = document.querySelector("#slider")
 let buttonElement = document.querySelector("button")
 

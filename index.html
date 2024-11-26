@@ -16,24 +16,36 @@
         <span>Tamanho <span id="valor"> </span> caracteres </span>
         <input id="slider" class="slider" type="range" name="gerador" min="5" max="15" value="10">
 
+        
         <div class="item">
-            <input type="checkbox" name="include_uppercase" id="include_uppercase">
-            <label for="include_uppercase">Incluir letras maiúsculas</label>
+            <label>
+                <input type="checkbox" name="include_uppercase" id="include_uppercase">
+                <span class="checkmark"></span>
+                Incluir letras maiúsculas
+            </label>
         </div>
-
         <div class="item">
-            <input type="checkbox" name="include_lowercase" id="include_lowercase">
-            <label for="include_lowercase">
+            <label>
+                <input type="checkbox" name="include_lowercase" id="include_lowercase">
+                <span class="checkmark"></span>
+                Incluir letras minúsculas
+            </label>
+        </div>
+        <div class="item">
+            <label>
+                <input type="checkbox" name="include_number" id="include_number">
+                <span class="checkmark"></span>
                 Incluir números
             </label>
         </div>
-
-        <div class="item">
-            <input type="checkbox" name="include_lowercase" id="include_lowercase">
-            <label for="include_lowercase">
-                Incluir caractere especial
+        <div class="item" name="include_special_character" id="include_special_character">
+            <label>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+                Incluir caracteres especiais
             </label>
         </div>
+
 
         <button id="button" class="button-cta" onclick="generatePassword()"> Gerar senha</button>
     </main>
@@ -43,6 +55,7 @@
         <span id="password" class="password"></span>
         <span class="tooltip">Clique na senha para copiar.☝️</span>
     </div>
+
 
     <script src="script.js"></script>
     
