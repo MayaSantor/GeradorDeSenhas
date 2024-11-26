@@ -16,15 +16,42 @@ function getChartTypes() {
         charTypes.push('0123456789')
     }
     if (specialCharacter) {
-        charTypes.push('plmdds')
+        charTypes.push('!@#$%^&*()_-+={}[]|\\/?><:;"\'.,~`')
     }
+
     return charTypes;
 }
 
+function getPasswordSize() {
+    const slider = document.querySelector('#slider');
+    let size = slider.value;
+    document.querySelector('#valor').textContent = size;
+    return size;
+    //puxa o valor escolhido no slider e atualiza o valor que vai pro span onde o usuário de fato vê o número    
+}
+
+function randomCharType(charTypes) {
+    const randomIndex = Math.floor(Math.random() * charTypes.length);
+    
+    return charTypes[randomIndex][Math.floor(Math.random() * charTypes.length)];
+}
+
+function generatePassword(size, charTypes) {
+    let passwordGenerated = '';
+
+    while (passwordGenerated.length < size) {
+        passwordGenerated += randomCharType(charTypes)
+    }
+    return passwordGenerated;
+}
 
 document.querySelector('#button').addEventListener('click', function () {
-    console.log(getChartTypes());
+    //console.log(randomCharType(getChartTypes()));
+    const size = getPasswordSize();
+    console.log(size)
 })
+
+
 
 
 let sliderElement = document.querySelector("#slider")
@@ -44,16 +71,18 @@ sliderElement.oninput = function(){
     sizePassword.innerHTML = this.value;
 }
 
+
 function generatePassword(){
+    charTypes = getChartTypes();
     let pass = "";
-    for(let i = 0, n = charset.length; i <sliderElement.value; ++i){
+    for(let i = 0, n = charTypes.length; i <sliderElement.value; ++i){
         pass += charset.charAt(Math.floor(Math.random() * n));
     }
 
     containterPassword.classList.remove("hide");
     password.innerHTML = pass;
     novaSenha = pass;
-}
+} 
 
 function copyPassword(){
     alert("Senha copiada com sucesso")
