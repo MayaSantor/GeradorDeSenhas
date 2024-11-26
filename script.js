@@ -3,13 +3,27 @@ function getChartTypes() {
     const lowercase = document.querySelector('#include_lowercase').checked;
     const number = document.querySelector('#include_number').checked;
     const specialCharacter = document.querySelector('#include_special_character').checked;
-    console.log('Uppercase:', uppercase);
+   
+    const charTypes = [];
+
+    if (uppercase) {
+        charTypes.push('ABCDEFGHIJKLMNOPQRSTUVWXYZ')
+    }
+    if (lowercase) {
+        charTypes.push('abcdefghijklmnopqrstuvwxyz')
+    }
+    if (number) {
+        charTypes.push('0123456789')
+    }
+    if (specialCharacter) {
+        charTypes.push('plmdds')
+    }
+    return charTypes;
 }
 
 
-document.querySelector('#include_uppercase').addEventListener('click', function () {
-    getChartTypes();
-    
+document.querySelector('#button').addEventListener('click', function () {
+    console.log(getChartTypes());
 })
 
 
