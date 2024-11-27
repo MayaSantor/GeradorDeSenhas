@@ -32,23 +32,22 @@ function getPasswordSize() {
 
 function randomCharType(charTypes) {
     const randomIndex = Math.floor(Math.random() * charTypes.length);
-    
-    return charTypes[randomIndex][Math.floor(Math.random() * charTypes.length)];
+    return charTypes[randomIndex][Math.floor(Math.random() * charTypes[randomIndex].length)];
 }
 
-function generatePassword(size, charTypes) {
-    let passwordGenerated = '';
-
-    while (passwordGenerated.length < size) {
-        passwordGenerated += randomCharType(charTypes)
-    }
-    return passwordGenerated;
-}
 
 document.querySelector('#button').addEventListener('click', function () {
-    //console.log(randomCharType(getChartTypes()));
     const size = getPasswordSize();
-    console.log(size)
+    const charTypes = getChartTypes();
+
+    // Verifica se foram selecionados tipos de caracteres
+    if (charTypes.length === 0) {
+        alert("Selecione pelo menos um tipo de caractere.");
+        return;  // Retorna imediatamente se não tiver tipos de caracteres selecionados
+    }
+
+    // Se charTypes não estiver vazio, chama a função para gerar a senha
+    generatePassword(size, charTypes);
 })
 
 
@@ -72,17 +71,21 @@ sliderElement.oninput = function(){
 }
 
 
-function generatePassword(){
-    charTypes = getChartTypes();
+function generatePassword(size, charTypes) {
     let pass = "";
-    for(let i = 0, n = charTypes.length; i <sliderElement.value; ++i){
-        pass += charset.charAt(Math.floor(Math.random() * n));
+
+    // Gera a senha com base nos tipos de caracteres selecionados
+    for (let i = 0; i < size; i++) {
+        pass += randomCharType(charTypes);
     }
 
+    // Exibe a senha gerada
     containterPassword.classList.remove("hide");
     password.innerHTML = pass;
     novaSenha = pass;
-} 
+
+    return pass;
+}
 
 function copyPassword(){
     alert("Senha copiada com sucesso")
