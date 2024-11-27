@@ -40,13 +40,11 @@ document.querySelector('#button').addEventListener('click', function () {
     const size = getPasswordSize();
     const charTypes = getChartTypes();
 
-    // Verifica se foram selecionados tipos de caracteres
     if (charTypes.length === 0) {
         alert("Selecione pelo menos um tipo de caractere.");
-        return;  // Retorna imediatamente se não tiver tipos de caracteres selecionados
+        return; 
     }
 
-    // Se charTypes não estiver vazio, chama a função para gerar a senha
     generatePassword(size, charTypes);
 })
 
@@ -54,14 +52,9 @@ document.querySelector('#button').addEventListener('click', function () {
 
 
 let sliderElement = document.querySelector("#slider")
-let buttonElement = document.querySelector("button")
-
 let sizePassword = document.querySelector("#valor")
 let password = document.querySelector("#password")
-
 let containterPassword = document.querySelector("#container-password")
-
-let charset = "abcdefghijklmnoprstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@"
 let novaSenha = "";
 
 sizePassword.innerHTML=sliderElement.value;
@@ -70,16 +63,12 @@ sliderElement.oninput = function(){
     sizePassword.innerHTML = this.value;
 }
 
-
 function generatePassword(size, charTypes) {
     let pass = "";
 
-    // Gera a senha com base nos tipos de caracteres selecionados
     for (let i = 0; i < size; i++) {
         pass += randomCharType(charTypes);
     }
-
-    // Exibe a senha gerada
     containterPassword.classList.remove("hide");
     password.innerHTML = pass;
     novaSenha = pass;
