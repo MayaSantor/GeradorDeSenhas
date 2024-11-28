@@ -87,11 +87,20 @@ function copyPassword(){
 }
 
 
-function showPopup(message) {
+function showPopup(message, type = 'default') {
     const popup = document.querySelector('#custom-popup');
     const popupMessage = document.querySelector('#popup-message');
     popupMessage.textContent = message;
+
+    // Adiciona uma classe para diferenciar o tipo de pop-up
+    if (type === 'passwordCopied') {
+        popup.classList.add('password-copied-popup');
+    } else {
+        popup.classList.remove('password-copied-popup');
+    }
+
     popup.classList.remove('hide');
+    popup.focus();  // Garante que o pop-up receba o foco quando exibido
 }
 
 function hidePopup() {
@@ -99,5 +108,34 @@ function hidePopup() {
     popup.classList.add('hide');
 }
 
-// Evento para o botão de fechar
 document.querySelector('#popup-close').addEventListener('click', hidePopup);
+
+document.addEventListener('keydown', function (event) {
+    const popup = document.querySelector('#custom-popup');
+    
+    if (popup.classList.contains('hide')) {
+        return;
+    }
+    
+
+    if (event.key === 'Enter') {
+        hidePopup();
+    }
+});
+
+function copyPassword() {
+    showPopup("Senha copiada com sucesso", 'passwordCopied');
+    navigator.clipboard.writeText(novaSenha);
+}
+
+document.querySelector('#button').addEventListener('click', function () {
+    const size = getPasswordSize();
+    const charTypes = getChartTypes();
+
+    if (charTypes.length === 0) {
+        showPopup("Selecione pelo menos um tipo de caractere.");
+        return; 
+    }
+    
+    generatePassword(size, charTypes);
+});
