@@ -39,6 +39,7 @@ function randomCharType(charTypes) {
 document.querySelector('#button').addEventListener('click', function () {
     const size = getPasswordSize();
     const charTypes = getChartTypes();
+    const passwordDisplay = document.querySelector('.tooltip');
 
     if (charTypes.length === 0) {
         showPopup("Selecione pelo menos um tipo de caractere.");
@@ -46,9 +47,11 @@ document.querySelector('#button').addEventListener('click', function () {
     }
 
     generatePassword(size, charTypes);
+
+    passwordDisplay.scrollIntoView ({
+        block: 'center'
+    })
 })
-
-
 
 
 let sliderElement = document.querySelector("#slider")
@@ -127,15 +130,3 @@ function copyPassword() {
     showPopup("Senha copiada com sucesso", 'passwordCopied');
     navigator.clipboard.writeText(novaSenha);
 }
-
-document.querySelector('#button').addEventListener('click', function () {
-    const size = getPasswordSize();
-    const charTypes = getChartTypes();
-
-    if (charTypes.length === 0) {
-        showPopup("Selecione pelo menos um tipo de caractere.");
-        return; 
-    }
-    
-    generatePassword(size, charTypes);
-});
