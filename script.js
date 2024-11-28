@@ -41,7 +41,7 @@ document.querySelector('#button').addEventListener('click', function () {
     const charTypes = getChartTypes();
 
     if (charTypes.length === 0) {
-        alert("Selecione pelo menos um tipo de caractere.");
+        showPopup("Selecione pelo menos um tipo de caractere.");
         return; 
     }
 
@@ -82,6 +82,22 @@ function generatePassword(size, charTypes) {
 }
 
 function copyPassword(){
-    alert("Senha copiada com sucesso")
+    showPopup("Senha copiada com sucesso")
     navigator.clipboard.writeText(novaSenha);
 }
+
+
+function showPopup(message) {
+    const popup = document.querySelector('#custom-popup');
+    const popupMessage = document.querySelector('#popup-message');
+    popupMessage.textContent = message;
+    popup.classList.remove('hide');
+}
+
+function hidePopup() {
+    const popup = document.querySelector('#custom-popup');
+    popup.classList.add('hide');
+}
+
+// Evento para o botão de fechar
+document.querySelector('#popup-close').addEventListener('click', hidePopup);
