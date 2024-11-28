@@ -52,8 +52,10 @@ document.querySelector('#button').addEventListener('click', function () {
 
 
 let sliderElement = document.querySelector("#slider")
+
 let sizePassword = document.querySelector("#valor")
 let password = document.querySelector("#password")
+
 let containterPassword = document.querySelector("#container-password")
 let novaSenha = "";
 
@@ -69,9 +71,12 @@ function generatePassword(size, charTypes) {
     for (let i = 0; i < size; i++) {
         pass += randomCharType(charTypes);
     }
-    containterPassword.classList.remove("hide");
-    password.innerHTML = pass;
-    novaSenha = pass;
+
+    if (pass) {
+        containterPassword.classList.remove("hide");
+        password.innerHTML = pass;
+        novaSenha = pass;
+    }
 
     return pass;
 }
