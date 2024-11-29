@@ -1,3 +1,5 @@
+/* cor principais: #624e88 #e06cac usei o site https://uicolors.app/create para achar a paleta de cores */
+
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:wght@400;500&display=swap');
 
 * {
@@ -6,9 +8,11 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
-
 body {
     background: linear-gradient(150deg, #765da5 30%, #fecce3 100%);
+    color: #f7d3e9;
+    background-attachment: fixed; 
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,13 +29,13 @@ body {
 }
 
 .img-apresentacao {
-    max-width: 700px;
+    max-width: 600px;
     margin-right: 50px;
     animation: img-apresentacao-animacao 900ms ease-in;
 }
 
 .titulo-apresentacao {
-    color: #E6D9A2;
+    color: #f7d3e9;
     font-size: 65px;
     text-align: center;
     margin-top: 50px;
@@ -74,11 +78,6 @@ body {
     }
 }
 
-.logo{
-    max-width: 600px;
-    margin-bottom: 24px;
-}
-
 .container-input{
     padding-top: 40px;
     width: 480px;
@@ -86,7 +85,7 @@ body {
 }
 
 .container-input span{
-    color: #E6D9A2;
+    color: #30273f;
     font-size: 22px;
     margin-bottom: 10px;
 }
@@ -97,7 +96,7 @@ body {
     margin-top: 8px;
     height: 18px;
     border-radius: 5px;
-    background: #E6D9A2;
+    background: #fae9f4;
     outline: none;
     opacity: 0.7;
     cursor: pointer;
@@ -137,7 +136,8 @@ body {
   }
 
 .item:hover input~.checkmark {
-    background-color: #2196F3;
+    background-color: #c0bbe6;
+    cursor: pointer;
 }
 
 .checkmark:after {
@@ -155,23 +155,34 @@ body {
     top: 0px;
     width: 5px;
     height: 10px;
-    border: solid #CB80AB;
+    border: solid #d591ba;
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
+.genie-1 {
+    position: absolute;
+    top: 50%;
+    right: 28px;
+    transform: translateY(100%);
+    z-index: -1;
+    opacity: 0.6;       /* Define a transparência */
+    pointer-events: none;
+    
+}
+
 .button-cta{
     display: flex;
     height: 40px;
-    background-color: #CB80AB;
+    background-color: #624d8a;
     border: 0;
     border-radius: 4px;
     cursor: pointer;
     margin-top: 40px;
     margin-bottom: 40px;
-    color: #E6D9A2;
+    color: #fef1f7;
     font-weight: bold;
     font-size: 18px;
     align-items: center;
@@ -190,7 +201,7 @@ body {
 
 .title{
     text-align: center;
-    color: #E6D9A2;
+    color: #f3f2fb;
     font-size: 28px;
     margin-top: 24px;
     margin-bottom: 8px;
@@ -198,13 +209,13 @@ body {
 
 .password{
     height: 60px;
-    background-color: rgba(0, 0, 0, 0.40);
+    background-color: rgba(60, 67, 108, 0.40);
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #E6D9A2;
-    border: 1px solid #313131;
+    color: #fae9f4;
+    border: 1px solid #50436c;
     transition: transform 0.5s;
     width: 300px;
 }
@@ -214,7 +225,7 @@ body {
 }
 
 .tooltip{
-    color: #E6D9A2;
+    color: #f3f2fb;
     position: relative;
     top: 20px;
     margin-bottom: 100px;
@@ -243,8 +254,8 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
-    border: 2px solid #ccc;
+    background-color: #fcf3f9;
+    border: 2px solid #d8d5f0;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
     z-index: 1000;
@@ -271,12 +282,16 @@ body {
     margin: 0; 
 }
 
+#popup-message {
+    color: #9a87cd;
+}
+
 .popup-content button {
     margin-top: 20px;
     padding: 10px 20px;
     border: none;
-    background-color: #007bff;
-    color: white;
+    background-color: #9a87cd;
+    color: #fcf3f9;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -285,5 +300,5 @@ body {
 }
 
 .popup-content button:hover {
-    background-color: #0056b3;
+    background-color: #765da5;
 }
