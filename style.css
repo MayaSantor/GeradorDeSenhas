@@ -44,37 +44,37 @@ body {
 
 @keyframes img-apresentacao-animacao {
     0% {
-        transform: translateY(-500px); /* Começa acima da tela */
+        transform: translateY(-500px); 
     }
     40% {
-        transform: translateY(0); /* Quase atingindo a base */
+        transform: translateY(0); 
     }
     60% {
-        transform: translateY(-20px); /* Primeiro "pulo" para cima */
+        transform: translateY(-20px); 
     }
     80% {
-        transform: translateY(10px); /* Segundo "pulo" para baixo */
+        transform: translateY(10px); 
     }
     100% {
-        transform: translateY(0); /* Finaliza na base */
+        transform: translateY(0); 
     }
 }
 
 @keyframes titulo-apresentacao-animacao {
     0% {
-        transform: translateY(-500px); /* Começa acima da tela */
+        transform: translateY(-500px);
     }
     40% {
-        transform: translateY(0); /* Quase atingindo a base */
+        transform: translateY(0); 
     }
     60% {
-        transform: translateY(-20px); /* Primeiro "pulo" para cima */
+        transform: translateY(-20px); 
     }
     80% {
-        transform: translateY(10px); /* Segundo "pulo" para baixo */
+        transform: translateY(10px); 
     }
     100% {
-        transform: translateY(0); /* Finaliza na base */
+        transform: translateY(0); 
     }
 }
 
@@ -168,9 +168,8 @@ body {
     right: 28px;
     transform: translateY(100%);
     z-index: -1;
-    opacity: 0.6;       /* Define a transparência */
+    opacity: 0.6;
     pointer-events: none;
-    
 }
 
 .button-cta{
