@@ -120,9 +120,19 @@ body {
     margin-top: 8px;
     height: 18px;
     border-radius: 5px;
-    background: var(--color-primary-4);
+    background: var(--color-primary-3);
     outline: none;
     opacity: 0.7;
+    cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--color-primary-7); 
+    border-radius: 100%;
     cursor: pointer;
 }
 
