@@ -17,11 +17,12 @@
             <img src="img/computer-security-with-login-password-padlock.png" class="img-apresentacao">
         </div>
         <div class="titulo-apresentacao">
-            <p><span>O Gênio da </span><br> <span>Senha</span></p>
+            <p><span>Gerador de <br> Senha</p>
         </div>
     </div>
     
     <main class="container-input">
+        <div class="base">
         <span>Tamanho <span id="valor"> </span> caracteres </span>
         <input id="slider" class="slider" type="range" name="gerador" min="5" max="20" value="10">
         
@@ -57,17 +58,9 @@
             </label>
         </div>
 
-        <div class="genie-1">
-            <dotlottie-player src="https://lottie.host/ac70b07b-cee6-4c36-9739-31a2f92a316c/lVT0Jjm550.lottie" 
-            background="transparent" 
-            speed="1" 
-            style="width: 300px; height: 300px" 
-            loop 
-            autoplay>
-        </dotlottie-player>
-        </div>
 
         <button id="button" class="button-cta" onclick="generatePassword()"> Gerar senha</button>
+    </div>
     </main>
 
     <div id="container-password" onclick="copyPassword()" class="container-password hide">
